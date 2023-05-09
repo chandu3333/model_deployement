@@ -4,8 +4,16 @@ from pickle import load
 import pickle
 import pandas as pd
 
-ohen = pickle.load(open(r"C:\\Users\\HP\\Desktop\\ds_intership_2023\\New folder\\resources\\ohe.pkl",'rb'))
-knm = pickle.load(open(r"C:\\Users\\HP\\Desktop\\ds_intership_2023\\New folder\\resources\\model.pkl","rb"))
+FILE_DIR = os.path.dirname(os.path.abspath(__file__))
+PARENT_DIR = os.path.join(FILE_DIR, os.pardir)
+dir_of_interest = os.path.join(FILE_DIR, "resources")
+model_path= os.path.join(dir_of_interest,"model.pkl")
+ohe_path= os.path.join(dir_of_interest,"ohe.pkl")
+
+st.header("welcome let's predict our mobile price ranges :")
+
+ohen = pickle.load(open(ohe_path,'rb'))
+knm = pickle.load(open(model_path,"rb"))
 
 
 battery_power = st.text_input("enter battery range",placeholder="enter value")
