@@ -3,9 +3,14 @@ import numpy as np
 from pickle import load
 import pickle
 
-ohen = pickle.load(open(r"C:\Users\HP\Desktop\ds_intership_2023\New folder\resources\ohe.pkl"))
-knm = pickle.load(open(r"C:\Users\HP\Desktop\ds_intership_2023\New folder\resources\model.pkl"))
 
+FILE_DIR = os.path.dirname(os.path.abspath(__file__))
+PARENT_DIR = os.path.join(FILE_DIR, os.pardir)
+dir_of_interest = os.path.join(FILE_DIR, "resources")
+model_path= os.path.join(dir_of_interest,"model.pkl")
+ohe_path= os.path.join(dir_of_interest,"ohe.pkl")
+ohen = pickle.load(open(ohe_path))
+knm = pickle.load(open(model_path))
 
 battery_power = st.text_input("enter battery range",placeholder="enter value")
 blue = st.text_input("enter any blue",placeholder="enter value")
