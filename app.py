@@ -3,6 +3,7 @@ import streamlit as st
 import numpy as np
 from pickle import load
 import pickle
+import pandas as pd 
 
 
 FILE_DIR = os.path.dirname(os.path.abspath(__file__))
