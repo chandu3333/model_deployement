@@ -55,8 +55,8 @@ if btn == True:
         q_p3 = pd.concat([q_p,pd.DataFrame(q_p2)],axis=1)
         q_p3.columns=col_names
         pred = knm.predict(q_p3)
-        s = st.success(pred)
-        st.subheader("predicted mobile range in  :",s)       
+        st.subheader("predicted mobile range in  :")
+        st.success(pred)
 else:
         st.error("enter the value properly.")
 
